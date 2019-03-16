@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>bomb.png</file>
+        <file>app_icon.ico</file>
+        <file>button-close.png</file>
+        <file>hide_btn.png</file>
+    </qresource>
+</RCC>
