@@ -85,7 +85,7 @@ Window {
                     anchors.right: parent.right
                     height: parent.height
                     minimumValue: 10
-                    maximumValue: 668
+                    maximumValue: spinBox2.value*spinBox2.value
                     width: parent.width/2
                     font.pointSize: 12
                     value: 10
