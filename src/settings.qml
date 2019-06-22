@@ -9,6 +9,8 @@ Window {
     height: 200
 
     property var main_page: null
+    property int defbombs: 10
+    property int defsize: 9
     property int bombs: 10
     property int size: 9
 
@@ -117,6 +119,11 @@ Window {
                         //присвоить значения
                         size = spinBox2.value
                         bombs = spinBox1.value
+                        if(bombs > size*size)
+                        {
+                            bombs = defbombs
+                            size = defsize
+                        }
                         main_page.apply_settings(size,  bombs)
                         settings_page.close()
                     }

@@ -67,8 +67,11 @@ ApplicationWindow {
             bomb_edit.text = bombs
             break
         case -2:
-            bombs--;
-            bomb_edit.text = bombs
+            if(bombs > 0)
+            {
+                bombs--;
+                bomb_edit.text = bombs
+            }
             break
         default:
             bombs = num
@@ -114,9 +117,12 @@ ApplicationWindow {
     {
         if(sap_grid.get(ind-1).st === "st1" || sap_grid.get(ind-1).st === "st5")
         {
-            sap_grid.set(ind - 1, {"st": "st4"})
-            on_set_bombs(-2)
-            check_field()
+            if(bombs > 0)
+            {
+                sap_grid.set(ind - 1, {"st": "st4"})
+                on_set_bombs(-2)
+                check_field()
+            }
         }
         else if(sap_grid.get(ind-1).st !== "st3" && sap_grid.get(ind-1).st !== "st2")
         {
@@ -434,7 +440,7 @@ ApplicationWindow {
                     color: (state === "st2") ? "#008400" : ((state === "st3") ? "#ff0000"
                                                                               : ((state === "st4") ? "#0000ff" : "#bbbbbb"));
                     state: st
-                    states:[State{name: "st2"},State{name: "st2"},State{name: "st3"},State{name: "st4"},State{name: "st5"}]
+                    states:[State{name: "st1"},State{name: "st2"},State{name: "st3"},State{name: "st4"},State{name: "st5"}]
                     border.color: "#000000";
                     border.width: 1
                     radius: 4
